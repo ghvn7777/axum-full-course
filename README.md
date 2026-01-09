@@ -194,8 +194,8 @@ Found a bug or want to improve the code?
 
 - 📺 [YouTube - Aarambh Dev Hub](https://youtube.com/@AarambhDevHub)
 - 💻 [GitHub - aarambh-darshan](https://github.com/aarambh-darshan)
-- 🐦 [Twitter/X](https://twitter.com/your-handle)
-- 💬 [Discord Community](https://discord.gg/your-server)
+- 🐦 [Twitter/X](https://twitter.com/AarambhDevHub)
+- 💬 [Discord Community](https://discord.gg/HDth6PfCnp)
 
 ## ☕ Support
 
@@ -203,7 +203,7 @@ If this course helped you, consider:
 
 - ⭐ Starring this repository
 - 📺 Subscribing to the YouTube channel
-- ☕ [Buy Me a Coffee](https://buymeacoffee.com/your-link)
+- ☕ [Buy Me a Coffee](https://buymeacoffee.com/aarambhdevhub)
 
 ## 📄 License
 
