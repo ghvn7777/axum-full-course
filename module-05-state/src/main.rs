@@ -241,7 +241,8 @@ async fn main() {
     {
         let mut store = todo_store.write().unwrap();
         let todo = Todo {
-            id: Uuid::new_v4().to_string(),
+            // fixed id for testing
+            id: "bb7c1970-2b44-4d85-ac0b-a4f9f86ffd9b".to_string(), //Uuid::new_v4().to_string(),
             title: "Learn Axum".to_string(),
             completed: false,
         };

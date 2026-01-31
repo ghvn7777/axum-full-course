@@ -1,0 +1,41 @@
+# MODULE 05 API
+
+### GET /config - App configuration
+GET http://127.0.0.1:3000/config
+
+### GET /todos - List all todos
+GET http://127.0.0.1:3000/todos
+
+### POST /todos - Create a todo
+POST http://127.0.0.1:3000/todos
+Content-Type: application/json
+
+{
+    "title": "Karan"
+}
+
+### GET /todos/{id} - Get a todo
+GET http://127.0.0.1:3000/todos/bb7c1970-2b44-4d85-ac0b-a4f9f86ffd9b
+
+### PUT /todos/{id} - Update a todo
+PUT http://127.0.0.1:3000/todos/bb7c1970-2b44-4d85-ac0b-a4f9f86ffd9b
+Content-Type: application/json
+
+{
+    "title": "Jean-Claude Van Damme"
+}
+
+### DELETE /todos/{id} - Delete a todo
+DELETE http://127.0.0.1:3000/todos/bb7c1970-2b44-4d85-ac0b-a4f9f86ffd9b
+
+### GET /metrics - Request metrics
+GET http://127.0.0.1:3000/metrics
+
+### GET /track - Increment request count
+GET http://127.0.0.1:3000/track
+
+### GET /db/users - Database users
+GET http://127.0.0.1:3000/db/users
+
+### GET /me - Current user (Extension)
+GET http://127.0.0.1:3000/me
