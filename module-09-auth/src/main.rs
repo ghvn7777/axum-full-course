@@ -141,6 +141,12 @@ async fn login(
             token,
             expires_in: config.jwt_expiry_hours * 3600,
         }))
+    } else if input.email == "admin@example.com" && input.password == "password123" {
+        let token = create_token(&config, "admin-1", "admin")?;
+        Ok(Json(LoginResponse {
+            token,
+            expires_in: config.jwt_expiry_hours * 3600,
+        }))
     } else {
         Err(StatusCode::UNAUTHORIZED)
     }

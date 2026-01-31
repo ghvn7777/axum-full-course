@@ -1,0 +1,44 @@
+# MODULE 09 API
+
+### POST /register - Register
+POST http://127.0.0.1:3000/register
+Content-Type: application/json
+
+{
+    "name": "Karan",
+    "email": "karan@example.com",
+    "password": "password"
+}
+
+### POST /login - Login
+POST http://127.0.0.1:3000/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "password123"
+}
+
+### POST /login - admin login
+POST http://127.0.0.1:3000/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "password123"
+}
+
+# This token is returned by the /login endpoint
+### GET /protected/me - Protected route
+GET http://127.0.0.1:3000/protected/me
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyLTEiLCJleHAiOjE3Njk5NjM0NzAsInJvbGUiOiJ1c2VyIn0.ZPuoHEgLg9ltKPD1bOEdESb2CkmMF1JQ4sI5vgPoQFQ
+
+# This token is returned by the /login endpoint
+### GET /protected/admin - admin role allowed to access this route
+GET http://127.0.0.1:3000/protected/admin
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi0xIiwiZXhwIjoxNzY5OTY1Mjg1LCJyb2xlIjoiYWRtaW4ifQ.RSvl1xZz5MAuLR8Y8JIoAvwPD1KsxIA4C-rO57KUS5g
+
+
+### GET /protected/admin - user role not allowed to access this route
+GET http://127.0.0.1:3000/protected/admin
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyLTEiLCJleHAiOjE3Njk5NjM0NzAsInJvbGUiOiJ1c2VyIn0.ZPuoHEgLg9ltKPD1bOEdESb2CkmMF1JQ4sI5vgPoQFQ
