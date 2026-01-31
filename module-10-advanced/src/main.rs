@@ -5,7 +5,7 @@
 use axum::{
     extract::{
         ws::{Message, WebSocket, WebSocketUpgrade},
-        Multipart,
+        DefaultBodyLimit, Multipart,
     },
     response::{
         sse::{Event, KeepAlive, Sse},
@@ -59,10 +59,12 @@ async fn sse_handler() -> Sse<impl Stream<Item = Result<Event, Infallible>>> {
 async fn upload(mut multipart: Multipart) -> impl IntoResponse {
     let mut files = Vec::new();
 
-    while let Some(field) = multipart.next_field().await.unwrap() {
-        let name = field.name().unwrap_or("unknown").to_string();
-        let data = field.bytes().await.unwrap();
-        files.push(format!("{}: {} bytes", name, data.len()));
+    while let Ok(Some(field)) = multipart.next_field().await {
+        let name = field.file_name().unwrap_or("unknown").to_string();
+        match field.bytes().await {
+            Ok(data) => files.push(format!("{}: {} bytes", name, data.len())),
+            Err(e) => return format!("Error reading {}: {}", name, e),
+        }
     }
 
     if files.is_empty() {
@@ -158,6 +160,7 @@ async fn main() {
         .route("/ws", get(ws_handler))
         .route("/sse", get(sse_handler))
         .route("/upload", post(upload))
+        .layer(DefaultBodyLimit::max(10 * 1024 * 1024)) // 10MB
         .nest_service("/static", ServeDir::new("static"));
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
