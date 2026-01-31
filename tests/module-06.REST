@@ -1,0 +1,14 @@
+# MODULE 06 API
+
+### GET / - Index
+GET http://127.0.0.1:3000/
+
+### GET /public - Public data
+GET http://127.0.0.1:3000/public
+
+### GET /slow - Slow endpoint
+GET http://127.0.0.1:3000/slow
+
+### GET /protected/data - Protected data
+GET http://127.0.0.1:3000/protected/data
+X-API-Key: secret-key
