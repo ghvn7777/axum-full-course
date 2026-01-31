@@ -123,10 +123,14 @@ async fn combined_extractors(
 /// error responses instead of being silently ignored.
 ///
 /// Built-in types like Query and HeaderMap already implement this.
-async fn optional_query(Query(params): Query<Option<ListParams>>) -> String {
-    match params {
-        Some(p) => format!("Got params: page={:?}", p.page),
-        None => "No query params provided".to_string(),
+async fn optional_query(Query(params): Query<ListParams>) -> String {
+    if params.page.is_none() && params.limit.is_none() && params.sort.is_none() {
+        "No query params provided".to_string()
+    } else {
+        format!(
+            "Got params: page={:?}, limit={:?}, sort={:?}",
+            params.page, params.limit, params.sort
+        )
     }
 }
 

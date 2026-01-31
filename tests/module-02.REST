@@ -1,0 +1,96 @@
+# MODULE 02 API
+
+### GET / - Welcome message
+GET http://127.0.0.1:3000/
+
+### GET /resource - Get all resources
+GET http://127.0.0.1:3000/resource
+
+### POST /resource - Create a new resource
+POST http://127.0.0.1:3000/resource
+Content-Type: application/json
+
+{
+}
+
+### GET /resource/{id} - Get a resource by id
+GET http://127.0.0.1:3000/resource/1
+
+### PUT /resource/{id} - Update a resource by id
+PUT http://127.0.0.1:3000/resource/2
+Content-Type: application/json
+
+{
+}
+
+### PATCH /resource/{id} - Update a resource by id
+PATCH http://127.0.0.1:3000/resource/3
+Content-Type: application/json
+
+### DELETE /resource/{id} - Delete a resource by id
+DELETE http://127.0.0.1:3000/resource/4
+
+### GET /users/{id}/posts/{post_id} - Get a user's post by id
+GET http://127.0.0.1:3000/users/1/posts/2
+
+### GET /users/{user_id}/posts/{post_id}/comments/{comment_id} - Get a user's post's comment by id
+GET http://127.0.0.1:3000/users/1/posts/2/comments/3
+
+### GET /files/{*path} - Get a file by path
+GET http://127.0.0.1:3000/files/docs/readme.md
+
+### GET /items?page=1&limit=10 - Get a list of items
+GET http://127.0.0.1:3000/items?page=1&limit=10
+
+### GET /search?q=hello&category=books&sort=newest - Search for items
+GET http://127.0.0.1:3000/search?q=hello&category=books&sort=newest
+
+### GET /api/v1/users - Get a list of users
+GET http://127.0.0.1:3000/api/v1/users
+
+### POST /api/v1/users - Create a new user
+POST http://127.0.0.1:3000/api/v1/users
+Content-Type: application/json
+
+{
+    "name": "John Doe"
+}
+
+### GET /api/v1/users/{id} - Get a user by id
+GET http://127.0.0.1:3000/api/v1/users/1
+
+### PUT /api/v1/users/{id} - Update a user by id
+PUT http://127.0.0.1:3000/api/v1/users/1
+Content-Type: application/json
+
+{
+    "name": "Jane Doe"
+}
+
+### PATCH /api/v1/users/{id} - Update a user by id
+PATCH http://127.0.0.1:3000/api/v1/users/1
+Content-Type: application/json
+
+{
+    "name": "Jane Doe"
+}
+
+### DELETE /api/v1/users/{id} - Delete a user by id
+DELETE http://127.0.0.1:3000/api/v1/users/1
+
+### POST /api/v2/users - Create a new user
+POST http://127.0.0.1:3000/api/v2
+Content-Type: application/json
+
+{
+    "name": "John Doe"
+}
+
+### GET /api/v2/users - Get a list of users
+GET http://127.0.0.1:3000/api/v2/users
+
+### GET /api/v2/posts - Get a list of posts
+GET http://127.0.0.1:3000/api/v2/posts
+
+### Not found
+GET http://127.0.0.1:3000/not-found

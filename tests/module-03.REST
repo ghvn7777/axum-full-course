@@ -1,0 +1,82 @@
+# MODULE 03 API
+
+### GET /users/{id} - Get a user by id
+GET http://127.0.0.1:3000/users/1
+
+### GET /users?page=1&limit=10 - Get a list of users
+GET http://127.0.0.1:3000/users?page=2&limit=20&sort=name
+
+### GET /users?page=1&limit=10&sort=name - Get a list of users sorted by name
+GET http://127.0.0.1:3000/users
+
+### POST /users - Create a new user
+POST http://127.0.0.1:3000/users
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+}
+
+### GET /headers - Show headers
+GET http://127.0.0.1:3000/headers
+Accept: application/json
+Content-Type: application/json
+User-Agent: curl/8.1.0
+Host: 127.0.0.1:3000
+Connection: close
+
+### POST /raw - Show raw body
+POST http://127.0.0.1:3000/raw
+Content-Type: application/json
+
+{
+    "message": "Hello, World!"
+}
+
+### POST /users/{id}/update - Update a user by id
+POST http://127.0.0.1:3000/users/1/update?page=2&limit=20&sort=name
+Content-Type: application/json
+Accept: application/json
+User-Agent: curl/8.1.0
+Host: 127.0.0.1:3000
+Connection: close
+
+{
+    "name": "Karan",
+    "email": "karan@example.com"
+}
+
+### GET /optional - Optional query parameters (no params)
+GET http://127.0.0.1:3000/optional
+
+### GET /optional - With query params
+GET http://127.0.0.1:3000/optional?page=2&limit=20&sort=name
+
+### GET /protected - Protected endpoint
+GET http://127.0.0.1:3000/protected
+X-API-Key: secret123
+
+### GET /protected - Protected endpoint (no API key)
+GET http://127.0.0.1:3000/protected
+
+### POST /validated - Validated JSON body
+POST http://127.0.0.1:3000/validated
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+}
+
+### POST /validated - Validated JSON body (invalid email)
+POST http://127.0.0.1:3000/validated
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe"
+}
+
+### GET /state - State extractor
+GET http://127.0.0.1:3000/state

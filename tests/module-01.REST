@@ -1,0 +1,21 @@
+# MODULE 01 API
+
+### GET / - Hello World
+GET http://127.0.0.1:3000/
+
+### GET /hello - Welcome message
+GET http://127.0.0.1:3000/hello
+
+### GET /health - Health check
+GET http://127.0.0.1:3000/health
+
+### GET /created - Status code example
+GET http://127.0.0.1:3000/created
+
+### POST /echo - Echo back your message
+POST http://127.0.0.1:3000/echo
+Content-Type: application/json
+
+{
+    "message": "Hello, World!"
+}
