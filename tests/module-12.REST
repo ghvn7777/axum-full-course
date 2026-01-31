@@ -1,0 +1,13 @@
+# MODULE 12 API
+
+### GET / - Main endpoint
+GET http://localhost:3000/
+
+### GET /health - Health endpoint
+GET http://localhost:3000/health
+
+### GET /ready - Ready endpoint
+GET http://localhost:3000/ready
+
+### GET /metrics - Metrics endpoint
+GET http://localhost:3000/metrics
