@@ -1,0 +1,61 @@
+# MODULE 04 API
+
+### GET /string - Static string
+GET http://127.0.0.1:3000/string
+
+### GET /owned - Owned string
+GET http://127.0.0.1:3000/owned
+
+### GET /status - Status code
+GET http://127.0.0.1:3000/status
+
+### GET /json/user - JSON user
+GET http://127.0.0.1:3000/json/user
+
+### GET /json/users - JSON users
+GET http://127.0.0.1:3000/json/users
+
+### GET /json/created - JSON created
+GET http://127.0.0.1:3000/json/created
+
+### GET /html - HTML page
+GET http://127.0.0.1:3000/html
+
+### GET /html/dynamic - Dynamic HTML page
+GET http://127.0.0.1:3000/html/dynamic
+
+### GET /headers - Custom headers
+GET http://127.0.0.1:3000/headers
+
+### GET /full - Full response
+GET http://127.0.0.1:3000/full
+
+### GET /redirect/permanent - Permanent redirect
+GET http://127.0.0.1:3000/redirect/permanent
+
+### GET /redirect/temp - Temporary redirect
+GET http://127.0.0.1:3000/redirect/temp
+
+### GET /redirect/other - See other redirect
+GET http://127.0.0.1:3000/redirect/other
+
+### GET /new-location - New location
+GET http://127.0.0.1:3000/new-location
+
+### GET /temp-location - Temp location
+GET http://127.0.0.1:3000/temp-location
+
+### GET /success - Success
+GET http://127.0.0.1:3000/success
+
+### GET /custom - Custom response
+GET http://127.0.0.1:3000/custom
+
+### GET /api/success - API success
+GET http://127.0.0.1:3000/api/success
+
+### GET /api/error - API error
+GET http://127.0.0.1:3000/api/error
+
+### GET /maybe-error - Maybe error
+GET http://127.0.0.1:3000/maybe-error
