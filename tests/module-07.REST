@@ -1,0 +1,28 @@
+# MODULE 07 API
+
+### GET /users/{id} - Get a user by id
+GET http://127.0.0.1:3000/users/1
+
+### GET /users/{id} -- User not found
+GET http://127.0.0.1:3000/users/999
+
+### GET /validate/{value} - InValidate a value
+GET http://127.0.0.1:3000/validate/ab
+
+### GET /validate/{value} -- Valid input
+GET http://127.0.0.1:3000/validate/abcd
+
+### GET /protected - Protected resource
+GET http://127.0.0.1:3000/protected
+
+### GET /database - Database operation
+GET http://127.0.0.1:3000/database
+
+### GET /complex/{id} - Complex operation
+GET http://127.0.0.1:3000/complex/1
+
+### GET /complex/{id} -- Complex operation (user not found)
+GET http://127.0.0.1:3000/complex/101
+
+### GET /complex/{id} -- Complex operation (invalid input)
+GET http://127.0.0.1:3000/complex/0
